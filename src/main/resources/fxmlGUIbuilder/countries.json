@@ -1,0 +1,391 @@
+[
+  {
+    "name": "United States",
+    "cities": [
+      "New York",
+      "Los Angeles",
+      "Chicago",
+      "Houston",
+      "Philadelphia",
+      "Phoenix",
+      "San Antonio",
+      "San Diego",
+      "Dallas",
+      "San Jose"
+    ]
+  },
+  {
+    "name": "United Kingdom",
+    "cities": [
+      "London",
+      "Manchester",
+      "Liverpool",
+      "Birmingham",
+      "Leeds",
+      "Sheffield",
+      "Bristol",
+      "Glasgow",
+      "Edinburgh",
+      "Newcastle upon Tyne"
+    ]
+  },
+  {
+    "name": "France",
+    "cities": [
+      "Paris",
+      "Marseille",
+      "Lyon",
+      "Toulouse",
+      "Nice",
+      "Nantes",
+      "Strasbourg",
+      "Montpellier",
+      "Bordeaux",
+      "Lille"
+    ]
+  },
+  {
+    "name": "Germany",
+    "cities": [
+      "Berlin",
+      "Hamburg",
+      "Munich",
+      "Cologne",
+      "Frankfurt am Main",
+      "Stuttgart",
+      "Düsseldorf",
+      "Dortmund",
+      "Essen",
+      "Leipzig"
+    ]
+  },
+  {
+    "name": "Italy",
+    "cities": [
+      "Rome",
+      "Milan",
+      "Naples"
+    ]
+  },
+  {
+    "name": "Spain",
+    "cities": [
+      "Madrid",
+      "Barcelona",
+      "Valencia"
+    ]
+  },
+  {
+    "name": "Russia",
+    "cities": [
+      "Moscow",
+      "Saint Petersburg",
+      "Novosibirsk",
+      "Yekaterinburg",
+      "Nizhny Novgorod",
+      "Kazan"
+    ]
+  },
+  {
+    "name": "China",
+    "cities": [
+      "Beijing",
+      "Shanghai",
+      "Guangzhou"
+    ]
+  },
+  {
+    "name": "Japan",
+    "cities": [
+      "Tokyo",
+      "Osaka",
+      "Nagoya"
+    ]
+  },
+  {
+    "name": "South Korea",
+    "cities": [
+      "Seoul",
+      "Busan",
+      "Incheon"
+    ]
+  },
+  {
+    "name": "Australia",
+    "cities": [
+      "Sydney",
+      "Melbourne",
+      "Brisbane"
+    ]
+  },
+  {
+    "name": "Canada",
+    "cities": [
+      "Toronto",
+      "Vancouver",
+      "Montreal"
+    ]
+  },
+  {
+    "name": "Mexico",
+    "cities": [
+      "Mexico City",
+      "Guadalajara",
+      "Monterrey"
+    ]
+  },
+  {
+    "name": "Brazil",
+    "cities": [
+      "Sao Paulo",
+      "Rio de Janeiro",
+      "Brasilia"
+    ]
+  },
+  {
+    "name": "Argentina",
+    "cities": [
+      "Buenos Aires",
+      "Cordoba",
+      "Rosario"
+    ]
+  },
+  {
+    "name": "Chile",
+    "cities": [
+      "Santiago",
+      "Valparaiso",
+      "Concepcion"
+    ]
+  },
+  {
+    "name": "Peru",
+    "cities": [
+      "Lima",
+      "Arequipa",
+      "Trujillo"
+    ]
+  },
+  {
+    "name": "Colombia",
+    "cities": [
+      "Bogota",
+      "Medellin",
+      "Cali"
+    ]
+  },
+  {
+    "name": "Venezuela",
+    "cities": [
+      "Caracas",
+      "Maracaibo",
+      "Valencia"
+    ]
+  },
+  {
+    "name": "Ecuador",
+    "cities": [
+      "Quito",
+      "Guayaquil",
+      "Cuenca"
+    ]
+  },
+  {
+    "name": "Panama",
+    "cities": [
+      "Panama City",
+      "San Miguelito",
+      "Tocumen"
+    ]
+  },
+  {
+    "name": "Dominican Republic",
+    "cities": [
+      "Santo Domingo",
+      "Santiago de los Caballeros",
+      "La Romana"
+    ]
+  },
+  {
+    "name": "Puerto Rico",
+    "cities": [
+      "San Juan",
+      "Bayamon",
+      "Carolina"
+    ]
+  },
+  {
+    "name": "Jamaica",
+    "cities": [
+      "Kingston",
+      "Spanish Town",
+      "Portmore"
+    ]
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "cities": [
+      "Port of Spain",
+      "Chaguanas",
+      "San Fernando"
+    ]
+  },
+  {
+    "name": "Bahamas",
+    "cities": [
+      "Nassau",
+      "Freeport",
+      "Lucaya"
+    ]
+  },
+  {
+    "name": "Barbados",
+    "cities": [
+      "Bridgetown",
+      "Speightstown",
+      "Oistins"
+    ]
+  },
+  {
+    "name": "Belize",
+    "cities": [
+      "Belize City",
+      "San Ignacio",
+      "Orange Walk"
+    ]
+  },
+  {
+    "name": "Guatemala",
+    "cities": [
+      "Guatemala City",
+      "Mixco",
+      "Villa Nueva"
+    ]
+  },
+  {
+    "name": "Honduras",
+    "cities": [
+      "Tegucigalpa",
+      "San Pedro Sula",
+      "Choloma"
+    ]
+  },
+  {
+    "name": "El Salvador",
+    "cities": [
+      "San Salvador",
+      "Soyapango",
+      "Santa Ana"
+    ]
+  },
+  {
+    "name": "Nicaragua",
+    "cities": [
+      "Managua",
+      "Leon",
+      "Masaya"
+    ]
+  },
+  {
+    "name": "Costa de Marfil",
+    "cities": [
+      "Abidjan",
+      "Yamoussoukro",
+      "Bouake"
+    ]
+  },
+  {
+    "name": "Togo",
+    "cities": [
+      "Lome",
+      "Sokode",
+      "Kara"
+    ]
+  },
+  {
+    "name": "Ghana",
+    "cities": [
+      "Accra",
+      "Kumasi",
+      "Tamale"
+    ]
+  },
+  {
+    "name": "Senegal",
+    "cities": [
+      "Dakar",
+      "Thies",
+      "Rufisque"
+    ]
+  },
+  {
+    "name": "Benin",
+    "cities": [
+      "Porto-Novo",
+      "Cotonou",
+      "Abomey-Calavi"
+    ]
+  },
+  {
+    "name": "Burkina Faso",
+    "cities": [
+      "Ouagadougou",
+      "Bobo-Dioulasso",
+      "Koudougou"
+    ]
+  },
+  {
+    "name": "Niger",
+    "cities": [
+      "Niamey",
+      "Zinder",
+      "Maradi"
+    ]
+  },
+  {
+    "name": "Mali",
+    "cities": [
+      "Bamako",
+      "Sikasso",
+      "Mopti"
+    ]
+  },
+  {
+    "name": "Sierra Leone",
+    "cities": [
+      "Freetown",
+      "Bo",
+      "Kenema"
+    ]
+  },
+  {
+    "name": "Poland",
+    "cities": [
+      "Warsaw",
+      "Krakow",
+      "Lodz",
+      "Wroclaw",
+      "Poznan",
+      "Gdansk",
+      "Szczecin",
+      "Bydgoszcz",
+      "Lublin",
+      "Katowice",
+      "Bialystok",
+      "Gdynia",
+      "Czestochowa",
+      "Radom",
+      "Sosnowiec",
+      "Torun",
+      "Kielce",
+      "Gliwice",
+      "Rzeszow",
+      "Zabrze"
+    ]
+  }
+]
+
+
+
+
+
