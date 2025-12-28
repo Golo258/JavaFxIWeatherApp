@@ -32,7 +32,7 @@ public class GettingApiData {
         getClass().getResource(
             "/fxmlGUIbuilder/countries.json"
         )
-    )
+    );
 
     public ArrayList<Double> getApiCoordinates(String locationName) throws AppExceptions {
         Pattern regex = Pattern.compile("^[a-zA-Z]{3,10}, [a-zA-Z\s]{3,20}$");

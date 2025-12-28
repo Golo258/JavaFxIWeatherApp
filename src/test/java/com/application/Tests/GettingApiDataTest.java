@@ -1,4 +1,4 @@
-package com.application.Tests;
+package com.application.tests;
 
 import com.application.main.GettingApiData;
 import org.junit.jupiter.api.Test;
@@ -10,11 +10,6 @@ import com.application.models.WeatherApplication;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GettingApiDataTest {
-//    GIVEN
-
-//    WHEN
-
-    //    Then
     private GettingApiData data = new GettingApiData();
 
     @Test
@@ -23,22 +18,20 @@ class GettingApiDataTest {
         String mathLocation = "BadLocation";
         String urlLocation = "Bad, Argument";
         Throwable matchException = assertThrows(
-                Exception.class, () -> {
-                    ArrayList<Double> coordinates = data.getApiCoordinates(mathLocation);
-                }
+            Exception.class, () -> {
+                ArrayList<Double> coordinates = data.getApiCoordinates(mathLocation);
+            }
         );
         String expectedMath = "Math not found";
         assertEquals(expectedMath, matchException.getMessage());
-        System.out.println(expectedMath);
-        //        Second posibility
+        
         Throwable urlException = assertThrows(
-                Exception.class, () -> {
-                    ArrayList<Double> coordinates = data.getApiCoordinates(urlLocation);
-                }
+            Exception.class, () -> {
+                ArrayList<Double> coordinates = data.getApiCoordinates(urlLocation);
+            }
         );
         String expectedURL = "Invalid URL";
         assertEquals(expectedURL, urlException.getMessage());
-        System.out.println(expectedURL);
     }
 
     @Test
@@ -48,7 +41,6 @@ class GettingApiDataTest {
         ArrayList<Double> coordinates = data.getApiCoordinates(locationName);
         ArrayList<Double> coordinatesv2 = data.getApiCoordinates(locationName2);
         assertNotNull(coordinates);
-
         coordinatesv2.stream().forEach(element -> System.out.println("Elemnt is Double : " + (element instanceof Double)));
         boolean condition = (coordinatesv2.get(0) instanceof Double && coordinatesv2.get(1) != null);
         assertTrue(condition);
@@ -57,34 +49,32 @@ class GettingApiDataTest {
     @Test
     public void testGettingApiValuesNegativeScenario() throws Exception {
 
-        // Type check
-        ArrayList<Integer> cords = new ArrayList<>(Arrays.asList(
-                12, 15
-        ));
+        ArrayList<Integer> cords = new ArrayList<>(
+            Arrays.asList(12, 15)
+        );
 
         Throwable urlException = assertThrows(
-                Exception.class, () -> {
-                  WeatherApplication weather = data.getApiValues(cords);
-                }
+            Exception.class, () -> {
+                WeatherApplication weather = data.getApiValues(cords);
+            }
         );
         String typeException = "Wrong type of arguments";
         assertEquals(typeException, urlException.getMessage());
 
-        // is Empty check
         ArrayList<Double> emptyCords = new ArrayList<>();
 
         assertThrows(Exception.class, () -> {
-            WeatherApplication weather = data.getApiValues(cords);
-        }, "Cords are empty");
+                WeatherApplication weather = data.getApiValues(cords);
+            }, "Cords are empty"
+        );
     }
     @Test
     public void testGettingApiValuesPositiveScenario() throws Exception {
-        ArrayList<Double> cords = new ArrayList<>(Arrays.asList(
-                25.5, 32.5
-        ));
+        ArrayList<Double> cords = new ArrayList<>(
+            Arrays.asList(25.5, 32.5)
+        );
 
         WeatherApplication weather = data.getApiValues(cords);
-
         assertNotNull(weather);
     }
 
