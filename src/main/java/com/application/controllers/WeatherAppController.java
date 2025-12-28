@@ -52,21 +52,29 @@ public class WeatherAppController implements Initializable {
     @FXML
     CheckBox tempCheck, feelCheck, stampCheck, simpleCheck;
     @FXML
-    Label basicLabel, tempDataLabel, feelsDataLabel, stampsDataLabel, simpleDataLabel,
-            isGeneratedDataLabel, isGeneratedDataSecondScene;
+    Label basicLabel,
+          tempDataLabel,
+          feelsDataLabel,
+          stampsDataLabel,
+          simpleDataLabel,
+          isGeneratedDataLabel,
+          isGeneratedDataSecondScene;
     @FXML
     GridPane mainGridPane;
     @FXML
     ListView<String> dayListView, countriesView, citiesView;
     @FXML
-    GridPane firstDayGridPane, secondDayGridPane,
-            thirdDayGridPane, fourthDayGridPane, fifthDayGridPane;
+    GridPane firstDayGridPane, 
+             secondDayGridPane,
+             thirdDayGridPane,
+             fourthDayGridPane,
+             fifthDayGridPane;
 
     @FXML
     Button hintButton;
 
-    ArrayList<Label> labelArray = new ArrayList<>(),
-            secondSceneLabelArray = new ArrayList<>();
+    ArrayList<Label> labelArray = new ArrayList<>();
+    ArrayList<Label> secondSceneLabelArray = new ArrayList<>();
     ArrayList<CheckBox> boxesArray = new ArrayList<>();
     StringBuilder fileDatabuilder = new StringBuilder();
 
@@ -79,8 +87,12 @@ public class WeatherAppController implements Initializable {
 
     public enum WeekDay {
         MONDAY,
-        TUESDAY, WEDNESDAY, THURSDAY,
-        FRIDAY, SATURDAY, SUNDAY
+        TUESDAY,
+        WEDNESDAY,
+        THURSDAY,
+        FRIDAY, 
+        SATURDAY,
+        SUNDAY
     }
 
     //    Switch to another scenes
@@ -99,16 +111,18 @@ public class WeatherAppController implements Initializable {
     private boolean isFirstInit;
     private ArrayList<String> previousCuttedList = new ArrayList<>();
 
-    public void postLocalisation(ActionEvent event) throws AppExceptions {
-        if (isDataChanged && boxesArray != null && labelArray != null) { // is false
-            for (CheckBox box : boxesArray) {
-                box.setSelected(false); // unselect all checkboxes and label data
+    public void postLocalisa tion(ActionEvent event) throws AppExceptions {
+        if (isDataChanged && boxesArray != null && labelArray != null) {
+             // unselect all checkboxes and label data
+            for (CheckBox box : boxesArray) { 
+                box.setSelected(false);
             }
             for (Label label : labelArray) {
                 label.setText("");
             }
             isFirstInit = false;
-        } else {
+        } 
+        else {
             isFirstInit = true;
         }
         if (!cordField.getText().isEmpty()) {
@@ -128,27 +142,33 @@ public class WeatherAppController implements Initializable {
                     isDataChanged = true;
                     labelArray = new ArrayList<>();
                     boxesArray = new ArrayList<>();
-//                TODO consider to change it to something different
                     basicLabel.setText(dailyDay.getTemp().show("long"));
                     labelArray.add(basicLabel);
 
-                } catch (Exception exception) {
+                } 
+                catch (Exception exception) {
                     System.out.println(exception.getMessage());
-
                 }
-            } catch (LocalisationSyntaxException syntaxException) {
-                isGeneratedDataLabel.setText("Incorrect localisation given. Use syntax Country, City.");
+            } 
+            catch (LocalisationSyntaxException syntaxException) {
+                isGeneratedDataLabel.setText(
+                    "Incorrect localisation given. Use syntax Country, City."
+                );
                 isGeneratedDataLabel.setStyle("-fx-border-color: red");
                 System.out.println(syntaxException.getMessage());
                 syntaxException.getStackTrace();
-            } catch (PlaceExistingException existingException) {
+            }
+            catch (PlaceExistingException existingException) {
                 isGeneratedDataLabel.setText("Place which you type not exist. Try one more time.");
                 isGeneratedDataLabel.setStyle("-fx-border-color: red");
                 System.out.println(existingException.getMessage());
                 existingException.getStackTrace();
             }
-        } else {
-            isGeneratedDataLabel.setText("Nothing Given. Type localisation which forecast you want to see");
+        } 
+        else {
+            isGeneratedDataLabel.setText(
+                "Nothing Given. Type localisation which forecast you want to see"
+            );
             isGeneratedDataLabel.setStyle("-fx-border-color: #4f0808");
         }
     }
@@ -159,17 +179,21 @@ public class WeatherAppController implements Initializable {
         boxesArray = new ArrayList<>();
         HashMap<Object[], Label> objectsLabelMap;
         CheckBox[] boxes = {
-                tempCheck, feelCheck, stampCheck, simpleCheck
+            tempCheck,
+            feelCheck,
+            stampCheck,
+            simpleCheck
         };
         if (dailyDay != null) {
             // TODO change to better name
             objectsLabelMap = new HashMap<>(Map.of(
-                    new Object[]{dailyDay.getTemp(), tempCheck}, tempDataLabel,
-                    new Object[]{dailyDay.getFeels_like(), feelCheck}, feelsDataLabel,
-                    new Object[]{dailyDay, stampCheck, "stamps"}, stampsDataLabel,
-                    new Object[]{dailyDay, simpleCheck, "simple"}, simpleDataLabel
+                new Object[]{dailyDay.getTemp(), tempCheck}, tempDataLabel,
+                new Object[]{dailyDay.getFeels_like(), feelCheck}, feelsDataLabel,
+                new Object[]{dailyDay, stampCheck, "stamps"}, stampsDataLabel,
+                new Object[]{dailyDay, simpleCheck, "simple"}, simpleDataLabel
             ));
-        } else {
+        } 
+        else {
             for (CheckBox box : boxes) {
                 box.setSelected(false);
             }
@@ -183,34 +207,34 @@ public class WeatherAppController implements Initializable {
         try {
             HashMap<Object[], Label> Choices = displayChosenData();
             for (Map.Entry<Object[], Label> choice : Choices.entrySet()) {
-                try {
-                    var keyObject = choice.getKey()[0];
-                    CheckBox box = (CheckBox) choice.getKey()[1];
-                    var valueLabel = choice.getValue();
-                    if (box.isSelected()) {
-                        if (keyObject instanceof Temp) {
-                            valueLabel.setText(((Temp) keyObject).show("long"));
-                        } else if (keyObject instanceof FeelsLike) {
-                            valueLabel.setText(((FeelsLike) keyObject).show("long"));
-                        } else if (keyObject instanceof Daily) {
-                            String dailyText;
-                            if (choice.getKey()[2].equals("stamps"))
-                                dailyText = ((Daily) keyObject).show("long", "stamps");
-                            else
-                                dailyText = ((Daily) keyObject).show("long", "simple");
-                            valueLabel.setText(dailyText);
-                        }
-                        labelArray.add(valueLabel);
-                        boxesArray.add(box);
-
-                    } else {
-                        valueLabel.setText("");
+                var keyObject = choice.getKey()[0];
+                CheckBox box = (CheckBox) choice.getKey()[1];
+                var valueLabel = choice.getValue();
+                if (box.isSelected()) {
+                    if (keyObject instanceof Temp) {
+                        valueLabel.setText(((Temp) keyObject).show("long"));
                     }
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    else if (keyObject instanceof FeelsLike) {
+                        valueLabel.setText(((FeelsLike) keyObject).show("long"));
+                    } 
+                    else if (keyObject instanceof Daily) {
+                        String dailyText;
+                        if (choice.getKey()[2].equals("stamps"))
+                            dailyText = ((Daily) keyObject).show("long", "stamps");
+                        else
+                            dailyText = ((Daily) keyObject).show("long", "simple");
+                        valueLabel.setText(dailyText);
+                    }
+                    labelArray.add(valueLabel);
+                    boxesArray.add(box);
+
+                } 
+                else {
+                    valueLabel.setText("");
                 }
             }
-        } catch (NullPointerException exception) {
+        }
+        catch (NullPointerException exception) {
             System.out.println(exception.getMessage());
             isGeneratedDataLabel.setText("Type localisation first ");
         }
@@ -222,19 +246,21 @@ public class WeatherAppController implements Initializable {
             countriesView.setVisible(false);
             citiesView.setVisible(false);
             String[] days = Arrays.stream(WeekDay.values())
-                    .map(Enum::toString)
-                    .toArray(String[]::new);
-            dayListView.getItems().addAll(days); // adding days to view
-            dayListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-                @Override
-                public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                    String chosenDay = dayListView.getSelectionModel().getSelectedItem();
-                    WeekDay day = WeekDay.valueOf(chosenDay);
-                    weekDay = day.ordinal();
-                }
+                .map(Enum::toString)
+                .toArray(String[]::new);
+            dayListView.getItems().addAll(days);
+            dayListView.getSelectionModel()
+                .selectedItemProperty()
+                .addListener(new ChangeListener<String>() {
+                    @Override
+                    public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                        String chosenDay = dayListView.getSelectionModel().getSelectedItem();
+                        WeekDay day = WeekDay.valueOf(chosenDay);
+                        weekDay = day.ordinal();
+                    }
             });
+            // Menu handler ZOOM IN OUT RESET
             mainAnchorPane.setOnKeyPressed(event -> {
-//                Menu handler ZOOM IN OUT RESET
                 if (event.isControlDown() && (event.getCode() == KeyCode.O)) {
                     defaultFontSize -= 4;
                     event.consume();
@@ -250,26 +276,35 @@ public class WeatherAppController implements Initializable {
                 mainAnchorPane.setStyle("-fx-font-size: " + defaultFontSize);
             });
 
-        } catch (Exception exception) {
+        } 
+        catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
     }
 
     public void goBackToOneDayForecastScene(ActionEvent event) throws IOException {
         isSecondSceneButtonClicked = false;
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().
-                getResource("/fxmlGUIbuilder/weather_application_scene.fxml")));
+        root = FXMLLoader.load(
+            Objects.requireNonNull(
+                getClass().getResource(
+                    "/fxmlGUIbuilder/weather_application_scene.fxml"
+                )
+            )
+        );
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     public void goWeekForecastScene(ActionEvent event) throws IOException {
         isSecondSceneButtonClicked = true;
-        root = FXMLLoader.load(Objects.requireNonNull(getClass().
-                getResource("/fxmlGUIbuilder/weather_week_forecast_Scene.fxml")));
+        root = FXMLLoader.load(Objects.requireNonNull(
+            getClass().getResource(
+                "/fxmlGUIbuilder/weather_week_forecast_Scene.fxml"
+                )
+            )
+        );
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -279,13 +314,13 @@ public class WeatherAppController implements Initializable {
     public void postLocalisationToSecondScene(ActionEvent event) throws AppExceptions {
         int labelsColumn = 1;
         Map<GridPane, Integer> weekPanes =
-                Map.of(
-                        firstDayGridPane, 1,
-                        secondDayGridPane, 2,
-                        thirdDayGridPane, 3,
-                        fourthDayGridPane, 4,
-                        fifthDayGridPane, 5
-                );
+            Map.of(
+                firstDayGridPane , 1,
+                secondDayGridPane, 2,
+                thirdDayGridPane , 3,
+                fourthDayGridPane, 4,
+                fifthDayGridPane , 5
+            );
         try {
             int columnIndex = 0;
             ArrayList<Double> cords = getData.getApiCoordinates(secondSceneCordField.getText());
@@ -300,12 +335,13 @@ public class WeatherAppController implements Initializable {
                         }
                         dailyDay = mainWeather.getDaily().get(pane.getValue());
                         ArrayList<String> content = new ArrayList<>(
-                                Arrays.asList(
-                                        dailyDay.getTemp().show("short"),
-                                        dailyDay.getFeels_like().show("short"),
-                                        dailyDay.show("short", "stamps"),
-                                        dailyDay.show("short", "simple")
-                                ));
+                            Arrays.asList(
+                                dailyDay.getTemp().show("short"),
+                                dailyDay.getFeels_like().show("short"),
+                                dailyDay.show("short", "stamps"),
+                                dailyDay.show("short", "simple")
+                            )
+                        );
                         for (; rowIndex < firstDayGridPane.getRowCount(); rowIndex++, columnIndex++) {
                             if (isChangedSecondScene) {
                                 Label tempLabel = secondSceneLabelArray.get(columnIndex);
@@ -318,24 +354,36 @@ public class WeatherAppController implements Initializable {
                         }
                     }
                 }
-            } catch (Exception exception) {
+            } 
+            catch (Exception exception) {
                 System.out.println("Weszło tutaj");
-                isGeneratedDataSecondScene.setText("Wrong given Location. You have to type weather as: Country, City");
+                isGeneratedDataSecondScene.setText(
+                    "Wrong given Location. You have to type weather as: Country, City"
+                );
                 isGeneratedDataSecondScene.setStyle("-fx-border-color: #aa2e2e");
                 System.out.println(exception.getMessage());
             }
-        } catch (LocalisationSyntaxException syntaxException) {
-            isGeneratedDataSecondScene.setText("Incorrect syntax given. Use syntax Country, City.");
+        } 
+        catch (LocalisationSyntaxException syntaxException) {
+            isGeneratedDataSecondScene.setText(
+                "Incorrect syntax given. Use syntax Country, City."
+            );
             isGeneratedDataSecondScene.setStyle("-fx-border-color: #4f0808");
             System.out.println(syntaxException.getMessage());
             syntaxException.getStackTrace();
-        } catch (NotGivenInputException inputException) {
-            isGeneratedDataSecondScene.setText("Nothing Given. Type localisation which forecast you want to see");
+        }
+        catch (NotGivenInputException inputException) {
+            isGeneratedDataSecondScene.setText(
+                "Nothing Given. Type localisation which forecast you want to see"
+            );
             isGeneratedDataSecondScene.setStyle("-fx-border-color: #4f0808");
             System.out.println(inputException.getMessage());
             inputException.getStackTrace();
-        } catch (PlaceExistingException existingException) {
-            isGeneratedDataSecondScene.setText("Incorrect localisation given. Try one more time.");
+        }
+        catch (PlaceExistingException existingException) {
+            isGeneratedDataSecondScene.setText(
+                "Incorrect localisation given. Try one more time."
+            );
             isGeneratedDataSecondScene.setStyle("-fx-border-color: #4f0808");
             System.out.println(existingException.getMessage());
             existingException.getStackTrace();
@@ -356,18 +404,17 @@ public class WeatherAppController implements Initializable {
     }
 
     public void giveListOfCountries(TextField sceneCordField) throws IOException {
-
         if (isHintButtonClicked) {
             ArrayList<String> countries = getData.getCountriesListFromJson();
             String backspaceCode = "\u0008";
             countriesView.getItems().addAll(countries);
-            // countries list propety
-            sceneCordField.textProperty().addListener((observable, oldValue, newValue) -> {
-                if (Objects.equals(newValue, backspaceCode)) {
-                    countriesView.getItems().addAll(previousCuttedList);
-                } else {
-                    if (newValue != null) {
-                        try {
+            sceneCordField.textProperty().addListener(
+                (observable, oldValue, newValue) -> {
+                    if (Objects.equals(newValue, backspaceCode)) {
+                        countriesView.getItems().addAll(previousCuttedList);
+                    } 
+                    else {
+                        if (newValue != null) {
                             ArrayList<String> cuttedList = getCountryRegexMatch(newValue, countries);
                             previousCuttedList = new ArrayList<>(countriesView.getItems());
                             ObservableList<String> items = countriesView.getItems();
@@ -377,36 +424,34 @@ public class WeatherAppController implements Initializable {
                                     i--;
                                 }
                             }
-                            Set<String> uniqueCountries = new LinkedHashSet<>(countriesView.getItems());
-                            countriesView.setItems(FXCollections.observableArrayList(uniqueCountries));
-                        } catch (Exception exception) {
+                            Set<String> uniqueCountries = new LinkedHashSet<>(
+                                countriesView.getItems()
+                            );
+                            countriesView.setItems(
+                                FXCollections.observableArrayList(uniqueCountries)
+                            );
                         }
-                    } else {
-                        System.out.println("I am in false ");
-                        countriesView.setVisible(false);
-                    }
-
+                    } 
+                    else { countriesView.setVisible(false); }
                 }
-            });
+            );
 
             TextField finalSceneCordField = sceneCordField;
             countriesView.setOnMouseClicked(item -> {
                 countriesView.setVisible(false); // TODO after get cities make sure that return first ListView is possible
                 String selectedCountryItem = countriesView.getSelectionModel().getSelectedItem();
                 finalSceneCordField.setText(selectedCountryItem + ", ");
-                finalSceneCordField.textProperty().addListener((observable, oldValue, newValue) -> {
-                    if (newValue != null) {
-                        citiesView.setVisible(true);
-                        try {
-                            citiesView.getItems().setAll(getData.getCitiesBasedOnCountries(selectedCountryItem));
-                        } catch (IOException e) {
-                            System.out.println("Error in here " + e.getMessage());
+                finalSceneCordField.textProperty().addListener(
+                    (observable, oldValue, newValue) -> {
+                        if (newValue != null) {
+                            citiesView.setVisible(true);
+                            citiesView.getItems().setAll(
+                                getData.getCitiesBasedOnCountries(selectedCountryItem)
+                            );
+                        } 
+                        else {
+                            citiesView.setVisible(false);
                         }
-
-                    } else {
-                        System.out.println("I am in false ");
-                        citiesView.setVisible(false);
-                    }
                 });
             });
             // cities list property
@@ -415,17 +460,18 @@ public class WeatherAppController implements Initializable {
                 finalSceneCordField.setText(finalSceneCordField.getText() + selectedCityItem);
                 citiesView.setVisible(false);
             });
-        } else {
+        } 
+        else {
             countriesView.setVisible(false);
         }
     }
 
-    public ArrayList<String> getCountryRegexMatch(String fieldValue, ArrayList<String> countries) {
+    public ArrayList<String> getCountryRegexMatch(
+        String fieldValue, ArrayList<String> countries
+    ) {
         ArrayList<String> cuttedList = new ArrayList<>();
         for (String countIndex : countries) {
-            if (countIndex.startsWith(fieldValue)) {
-                cuttedList.add(countIndex);
-            }
+            if (countIndex.startsWith(fieldValue))  cuttedList.add(countIndex);
         }
         return cuttedList;
     }
@@ -434,16 +480,11 @@ public class WeatherAppController implements Initializable {
     public void savingFile(ActionEvent event) {
         StringBuilder newDataToFile = getGeneratedDataToFile();
         if (newSelectedFile != null && !isFirstInit) {
-            try {
-                FileWriter appendWriter = new FileWriter(newSelectedFile, true);
-                appendWriter.write(newDataToFile.toString());
-                appendWriter.close();
-            } catch (IOException exception) {
-                System.out.println(exception.getMessage());
-            }
-
-        } else { // isFirstInit and
-//                System.out.println("First Save File ");
+            FileWriter appendWriter = new FileWriter(newSelectedFile, true);
+            appendWriter.write(newDataToFile.toString());
+            appendWriter.close();
+        } 
+        else { 
             savingFileAs(event);
         }
     }
@@ -451,59 +492,51 @@ public class WeatherAppController implements Initializable {
     public void savingFileAs(ActionEvent event) {
         StringBuilder fileDatabuilder = getGeneratedDataToFile();
         try {
-//            create file using FileChooser
             if (fileDatabuilder != null) {
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
                 fileChooser.setTitle("Create a new  file");
                 fileChooser.getExtensionFilters().add(
-                        new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+                    new FileChooser.ExtensionFilter("Text Files", "*.txt")
+                );
 
                 newSelectedFile = fileChooser.showSaveDialog(null);
-//            File selectedFile = fileChooser.showSaveDialog(null);
                 if (newSelectedFile != null) {
-                    try {
-
-                        boolean createdFile = newSelectedFile.createNewFile();
-                        if (createdFile) {
-                            FileWriter writer = new FileWriter(newSelectedFile);
-                            writer.write(fileDatabuilder.toString());
-                            writer.close();
-                        } else {
-                            System.out.println("File aready exists");
-                        }
-                    } catch (IOException exception) {
-                        System.out.println(exception.getMessage());
+                    boolean createdFile = newSelectedFile.createNewFile();
+                    if (createdFile) {
+                        FileWriter writer = new FileWriter(newSelectedFile);
+                        writer.write(fileDatabuilder.toString());
+                        writer.close();
                     }
-
-                } else {
-                    System.out.println("File chooser canceled");
-                }
-            } else {
-                System.out.println("To open FileChooser you have to generated data");
-            }
-
-        } catch (Exception exception) {
+                    else { System.out.println("File aready exists"); }
+                } 
+                else { System.out.println("File chooser canceled"); }
+            } 
+            else { System.out.println("To open FileChooser you have to generated data"); }
+        } 
+        catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
     }
 
     public StringBuilder getGeneratedDataToFile() {
         StringBuilder fileDatabuilder = new StringBuilder();
-        if (isDataGenerated) { // true
-            fileDatabuilder.append(dailyDay.getTemp().show("long")).
-                    append(dailyDay.getFeels_like().show("long")).
-                    append(dailyDay.show("long", "stamps")).
-                    append(dailyDay.show("long", "simple"));
+        if (isDataGenerated) {
+            fileDatabuilder
+                .append(dailyDay.getTemp().show("long"))
+                .append(dailyDay.getFeels_like().show("long"))
+                .append(dailyDay.show("long", "stamps"))
+                .append(dailyDay.show("long", "simple"));
+        }
+        else if (isDataGeneratedSecondScene) {
+            fileDatabuilder
+                .append(dailyDay.getTemp().show("long"))
+                .append(dailyDay.getFeels_like().show("long"))
+                .append(dailyDay.show("long", "stamps"))
+                .append(dailyDay.show("long", "simple"));
 
-
-        } else if (isDataGeneratedSecondScene) {
-            fileDatabuilder.append(dailyDay.getTemp().show("long")).
-                    append(dailyDay.getFeels_like().show("long")).
-                    append(dailyDay.show("long", "stamps")).
-                    append(dailyDay.show("long", "simple"));
-
-        } else {
+        } 
+        else {
             fileDatabuilder = null;
             isGeneratedDataLabel.setText("To save file you first have to generated data");
             isGeneratedDataLabel.setStyle("-fx-text-fill: rgb(255,160,122)");
@@ -519,11 +552,8 @@ public class WeatherAppController implements Initializable {
 
     public void getAppShortcuts(ActionEvent event) {
         Stage shortCutsStage = new Stage();
-        // TODO extend the view and shortcuts
         shortCutsStage.setTitle("Application Shortcuts");
         shortCutsStage.initModality(Modality.APPLICATION_MODAL);
-
-        // Create the content for the about window
         VBox content = new VBox();
         content.setAlignment(Pos.CENTER);
         content.setSpacing(10);
@@ -532,26 +562,22 @@ public class WeatherAppController implements Initializable {
         Button closeButton = new Button("Close");
         closeButton.setOnAction(e -> shortCutsStage.close());
         content.getChildren().addAll(titleLabel,
-                new Label("CTRL I: \t Restart Zoom View "),
-                new Label("CTRL O: \t Zoom In           "),
-                new Label("CTRL P: \t Zoom Out          "),
-                new Label("ESC:    \t Exit from App     "),
-                closeButton);
-
-        // Set the scene and show the window
+            new Label("CTRL I: \t Restart Zoom View "),
+            new Label("CTRL O: \t Zoom In           "),
+            new Label("CTRL P: \t Zoom Out          "),
+            new Label("ESC:    \t Exit from App     "),
+            closeButton
+        );
         Scene aboutScene = new Scene(content, 300, 200);
         shortCutsStage.setScene(aboutScene);
         shortCutsStage.showAndWait();
     }
 
     public void getAppRestart(ActionEvent event) {
-        if (isDataChanged && boxesArray != null && labelArray != null && cordField != null) { // is false
-            for (CheckBox box : boxesArray) {
-                box.setSelected(false); // unselect all checkboxes and label data
-            }
-            for (Label label : labelArray) {
-                label.setText("");
-            }
+        if (isDataChanged && boxesArray != null && labelArray != null && cordField != null) {
+             // unselect all checkboxes and label data
+            for (CheckBox box : boxesArray)  box.setSelected(false);
+            for (Label label : labelArray)   label.setText("");
             cordField.setText("");
         }
     }
@@ -583,18 +609,15 @@ public class WeatherAppController implements Initializable {
         Label label = new Label("Describe your problem in detail");
         label.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         TextField textField = new TextField();
-        // TODO to implement style to report
         Button okButton = new Button("OK");
         okButton.setOnAction(e -> {
-            // Get the input from the text field
             System.out.println("Problem with: " + textField.getText());
-            // TODO to implement method that send an email on action
-            // Close the dialog
             dialogStage.close();
         });
-        content.getChildren().addAll(label, textField, okButton);
+        content.getChildren().addAll(
+            label, textField, okButton
+        );
 
-        // Set the scene and show the dialog
         Scene scene = new Scene(content, 300, 200);
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
@@ -602,8 +625,10 @@ public class WeatherAppController implements Initializable {
 
     public void getAppHelpCenter(ActionEvent event) {
         try {
-//            TODO make implementation of site that will represent help centre
-            Desktop.getDesktop().browse(new URI("https://golo258.github.io/help_center/helpForecastCenter.html"));
+            // TODO make implementation of site that will represent help centre
+            Desktop.getDesktop().browse(
+                new URI("https://golo258.github.io/help_center/helpForecastCenter.html")
+            );
         } catch (Exception exception) {
             System.out.println("Failed to open help center: " + exception.getMessage());
         }
@@ -624,13 +649,14 @@ public class WeatherAppController implements Initializable {
         Label authorLabel = new Label("Author: Grzegorz Golonka");
         Button closeButton = new Button("Close");
         closeButton.setOnAction(e -> aboutStage.close());
-        content.getChildren().addAll(titleLabel, versionLabel, authorLabel, closeButton);
+        content.getChildren().addAll(
+            titleLabel, versionLabel, authorLabel, closeButton
+        );
 
         // Set the scene and show the window
         Scene aboutScene = new Scene(content, 300, 200);
         aboutStage.setScene(aboutScene);
         aboutStage.showAndWait();
-
     }
 
 // ---------------------------------------------------
