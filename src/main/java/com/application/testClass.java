@@ -1,18 +1,6 @@
 package com.application;
 
 
-import com.application.Application.GettingApiData;
-import com.application.MainClasses.Countries;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.core.type.ResolvedType;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-
 import java.io.*;
 import java.math.BigDecimal;
 import java.net.*;

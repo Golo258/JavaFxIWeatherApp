@@ -18,7 +18,7 @@
 
 <!--3.56 | 2.73-->
 
-<AnchorPane prefHeight="719.0" prefWidth="1325.0" stylesheets="@application_styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.fxjavagui.Controllers.weather_app_controller">
+<AnchorPane prefHeight="719.0" prefWidth="1325.0" stylesheets="@application_styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.application.controllers.WeatherAppController">
    <children>
 
       <TextField fx:id="secondSceneCordField" alignment="CENTER" layoutX="293.0" layoutY="64.0" onAction="#getTextFieldHintWeekScene" prefHeight="76.0" prefWidth="716.0" promptText="Enter Localisation">

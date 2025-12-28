@@ -1,12 +1,12 @@
 package com.application.Tests;
 
-import com.application.Application.GettingApiData;
+import com.application.main.GettingApiData;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.application.MainClasses.main_application_weather;
+import com.application.models.WeatherApplication;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GettingApiDataTest {
@@ -64,7 +64,7 @@ class GettingApiDataTest {
 
         Throwable urlException = assertThrows(
                 Exception.class, () -> {
-                  main_application_weather weather = data.getApiValues(cords);
+                  WeatherApplication weather = data.getApiValues(cords);
                 }
         );
         String typeException = "Wrong type of arguments";
@@ -74,7 +74,7 @@ class GettingApiDataTest {
         ArrayList<Double> emptyCords = new ArrayList<>();
 
         assertThrows(Exception.class, () -> {
-            main_application_weather weather = data.getApiValues(cords);
+            WeatherApplication weather = data.getApiValues(cords);
         }, "Cords are empty");
     }
     @Test
@@ -83,7 +83,7 @@ class GettingApiDataTest {
                 25.5, 32.5
         ));
 
-        main_application_weather weather = data.getApiValues(cords);
+        WeatherApplication weather = data.getApiValues(cords);
 
         assertNotNull(weather);
     }

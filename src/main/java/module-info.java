@@ -11,12 +11,12 @@ module com.example.fxjavagui {
     requires java.net.http;
     requires java.desktop;
 
-    opens com.application.Application to com.fasterxml.jackson.databind;
-    opens com.application.MainClasses to com.fasterxml.jackson.databind;
-    exports com.application.fxjavagui.Controllers;
-    exports com.application.Application;
-    opens com.application.fxjavagui.Controllers to javafx.fxml;
-    exports com.application.fxjavagui.Controllers.Exceptions;
-    opens com.application.fxjavagui.Controllers.Exceptions to javafx.fxml;
+    opens com.application.main to com.fasterxml.jackson.databind;
+    opens com.application.models to com.fasterxml.jackson.databind;
+    exports com.application.controllers;
+    exports com.application.main;
+    opens com.application.controllers to javafx.fxml;
+    exports com.application.exceptions;
+    opens com.application.exceptions to javafx.fxml;
 
 }

@@ -1,0 +1,283 @@
+{
+  "documentation": "https://opencagedata.com/api",
+  "licenses": [
+    {
+      "name": "see attribution guide",
+      "url": "https://opencagedata.com/credits"
+    }
+  ],
+  "rate": {
+    "limit": 2500,
+    "remaining": 2492,
+    "reset": 1680048000
+  },
+  "results": [
+    {
+      "annotations": {
+        "DMS": {
+          "lat": "50\u00b0 3' 38.32272'' N",
+          "lng": "19\u00b0 56' 13.55460'' E"
+        },
+        "MGRS": "34UDA2392145914",
+        "Maidenhead": "JO90xb24kn",
+        "Mercator": {
+          "x": 2219387.653,
+          "y": 6424004.76
+        },
+        "NUTS": {
+          "NUTS0": {
+            "code": "PL"
+          },
+          "NUTS1": {
+            "code": "PL2"
+          },
+          "NUTS2": {
+            "code": "PL21"
+          },
+          "NUTS3": {
+            "code": "PL213"
+          }
+        },
+        "OSM": {
+          "edit_url": "https://www.openstreetmap.org/edit?node=448855054#map=17/50.06065/19.93710",
+          "note_url": "https://www.openstreetmap.org/note/new#map=17/50.06065/19.93710&layers=N",
+          "url": "https://www.openstreetmap.org/?mlat=50.06065&mlon=19.93710#map=17/50.06065/19.93710"
+        },
+        "UN_M49": {
+          "regions": {
+            "EASTERN_EUROPE": "151",
+            "EUROPE": "150",
+            "PL": "616",
+            "WORLD": "001"
+          },
+          "statistical_groupings": [
+            "MEDC"
+          ]
+        },
+        "callingcode": 48,
+        "currency": {
+          "alternate_symbols": [],
+          "decimal_mark": ",",
+          "format": "%n %u",
+          "html_entity": "z&#322;",
+          "iso_code": "PLN",
+          "iso_numeric": "985",
+          "name": "Polish Z\u0142oty",
+          "smallest_denomination": 1,
+          "subunit": "Grosz",
+          "subunit_to_unit": 100,
+          "symbol": "z\u0142",
+          "symbol_first": 0,
+          "thousands_separator": " "
+        },
+        "flag": "\ud83c\uddf5\ud83c\uddf1",
+        "geohash": "u2yhv9mb2hdhkpw4tnbk",
+        "qibla": 144.05,
+        "roadinfo": {
+          "drive_on": "right",
+          "road": "Rynek G\u0142\u00f3wny",
+          "speed_in": "km/h"
+        },
+        "sun": {
+          "rise": {
+            "apparent": 1679977680,
+            "astronomical": 1679970960,
+            "civil": 1679975700,
+            "nautical": 1679973420
+          },
+          "set": {
+            "apparent": 1680023040,
+            "astronomical": 1680029760,
+            "civil": 1680025020,
+            "nautical": 1680027360
+          }
+        },
+        "timezone": {
+          "name": "Europe/Warsaw",
+          "now_in_dst": 1,
+          "offset_sec": 7200,
+          "offset_string": "+0200",
+          "short_name": "CEST"
+        },
+        "what3words": {
+          "words": "oatmeal.overnight.surreal"
+        }
+      },
+      "bounds": {
+        "northeast": {
+          "lat": 50.0606952,
+          "lng": 19.9371485
+        },
+        "southwest": {
+          "lat": 50.0605952,
+          "lng": 19.9370485
+        }
+      },
+      "components": {
+        "ISO_3166-1_alpha-2": "PL",
+        "ISO_3166-1_alpha-3": "POL",
+        "ISO_3166-2": [
+          "PL-12"
+        ],
+        "_category": "travel/tourism",
+        "_type": "hostel",
+        "city": "Krak\u00f3w",
+        "city_district": "Stare Miasto",
+        "continent": "Europe",
+        "country": "Polska",
+        "country_code": "pl",
+        "hostel": "Cracow",
+        "house_number": "18",
+        "political_union": "European Union",
+        "postcode": "31-008",
+        "quarter": "Stare Miasto",
+        "road": "Rynek G\u0142\u00f3wny",
+        "state": "wojew\u00f3dztwo ma\u0142opolskie",
+        "state_code": "12",
+        "suburb": "Stare Miasto"
+      },
+      "confidence": 9,
+      "formatted": "Cracow, Rynek G\u0142\u00f3wny 18, 31-008 Krak\u00f3w, Polska",
+      "geometry": {
+        "lat": 50.0606452,
+        "lng": 19.9370985
+      }
+    },
+    {
+      "annotations": {
+        "DMS": {
+          "lat": "50\u00b0 3' 41.14800'' N",
+          "lng": "19\u00b0 56' 11.68800'' E"
+        },
+        "MGRS": "34UDA2388546002",
+        "Maidenhead": "JO90xb24jr",
+        "Mercator": {
+          "x": 2219329.934,
+          "y": 6424140.469
+        },
+        "NUTS": {
+          "NUTS0": {
+            "code": "PL"
+          },
+          "NUTS1": {
+            "code": "PL2"
+          },
+          "NUTS2": {
+            "code": "PL21"
+          },
+          "NUTS3": {
+            "code": "PL213"
+          }
+        },
+        "OSM": {
+          "note_url": "https://www.openstreetmap.org/note/new#map=17/50.06143/19.93658&layers=N",
+          "url": "https://www.openstreetmap.org/?mlat=50.06143&mlon=19.93658#map=17/50.06143/19.93658"
+        },
+        "UN_M49": {
+          "regions": {
+            "EASTERN_EUROPE": "151",
+            "EUROPE": "150",
+            "PL": "616",
+            "WORLD": "001"
+          },
+          "statistical_groupings": [
+            "MEDC"
+          ]
+        },
+        "callingcode": 48,
+        "currency": {
+          "alternate_symbols": [],
+          "decimal_mark": ",",
+          "format": "%n %u",
+          "html_entity": "z&#322;",
+          "iso_code": "PLN",
+          "iso_numeric": "985",
+          "name": "Polish Z\u0142oty",
+          "smallest_denomination": 1,
+          "subunit": "Grosz",
+          "subunit_to_unit": 100,
+          "symbol": "z\u0142",
+          "symbol_first": 0,
+          "thousands_separator": " "
+        },
+        "flag": "\ud83c\uddf5\ud83c\uddf1",
+        "geohash": "u2yhv9mkgyzw02197tnq",
+        "qibla": 144.05,
+        "roadinfo": {
+          "drive_on": "right",
+          "speed_in": "km/h"
+        },
+        "sun": {
+          "rise": {
+            "apparent": 1679977680,
+            "astronomical": 1679970960,
+            "civil": 1679975700,
+            "nautical": 1679973420
+          },
+          "set": {
+            "apparent": 1680023040,
+            "astronomical": 1680029760,
+            "civil": 1680025020,
+            "nautical": 1680027360
+          }
+        },
+        "timezone": {
+          "name": "Europe/Warsaw",
+          "now_in_dst": 1,
+          "offset_sec": 7200,
+          "offset_string": "+0200",
+          "short_name": "CEST"
+        },
+        "what3words": {
+          "words": "bought.study.ejects"
+        }
+      },
+      "bounds": {
+        "northeast": {
+          "lat": 50.116379,
+          "lng": 20.1452955
+        },
+        "southwest": {
+          "lat": 49.9932915,
+          "lng": 19.8123365
+        }
+      },
+      "components": {
+        "ISO_3166-1_alpha-2": "PL",
+        "ISO_3166-1_alpha-3": "POL",
+        "_category": "place",
+        "_type": "city",
+        "continent": "Europe",
+        "country": "Polska",
+        "country_code": "pl",
+        "county": "Krak\u00f3w",
+        "local_administrative_area": "Krak\u00f3w",
+        "political_union": "European Union",
+        "state": "Wojew\u00f3dztwo ma\u0142opolskie",
+        "state_code": "12",
+        "town": "Krak\u00f3w"
+      },
+      "confidence": 5,
+      "formatted": "Krak\u00f3w, Polska",
+      "geometry": {
+        "lat": 50.06143,
+        "lng": 19.93658
+      }
+    }
+  ],
+  "status": {
+    "code": 200,
+    "message": "OK"
+  },
+  "stay_informed": {
+    "blog": "https://blog.opencagedata.com",
+    "mastodon": "https://en.osm.town/@opencage",
+    "twitter": "https://twitter.com/OpenCage"
+  },
+  "thanks": "For using an OpenCage API",
+  "timestamp": {
+    "created_http": "Tue, 28 Mar 2023 17:21:33 GMT",
+    "created_unix": 1680024093
+  },
+  "total_results": 2
+}
