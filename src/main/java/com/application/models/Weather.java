@@ -32,7 +32,11 @@ public class Weather {
             String iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
             URL url = new URL(iconURL);
             InputStream inputStream = url.openStream();
-            Path path = Paths.get("C:\\Users\\Grzesiek\\Desktop\\Repositories\\Java_Projects\\JavaFxIWeatherApp\\src\\main\\resources\\Images\\icon.png");
+            Path path = Paths.get(
+                getClass().getResource(
+                    "/static/scene/weather_icon.png"
+                )
+            );
             Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
 
             System.out.println("Image saved to: " + path);

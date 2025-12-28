@@ -28,7 +28,7 @@ public class ApiControllerTest {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         File file = new File(
             getClass().getResource(
-                "/fxmlGUIbuilder/countries.json"
+                "/builder/countries.json"
             )
         );
         try {
@@ -109,7 +109,7 @@ public class ApiControllerTest {
             byte[] buffer = new byte[4096];
             InputStream inputStream = url.openStream();
             FileOutputStream outputStream = new FileOutputStream(
-                getClass().getResource("/Images/icon.png")
+                getClass().getResource("/static/scene/weather_icon.png")
             );
             while ((byteRead = inputStream.read(buffer)) != -1) {
                 outputStream.write(buffer, 0, byteRead);

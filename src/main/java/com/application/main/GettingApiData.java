@@ -30,7 +30,7 @@ public class GettingApiData {
     private ObjectMapper mapper = getDefaultMapper();
     private File jsonCountriesFile = new File(
         getClass().getResource(
-            "/fxmlGUIbuilder/countries.json"
+            "/builder/countries.json"
         )
     );
 

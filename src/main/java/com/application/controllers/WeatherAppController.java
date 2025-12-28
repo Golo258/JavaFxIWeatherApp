@@ -287,7 +287,7 @@ public class WeatherAppController implements Initializable {
         root = FXMLLoader.load(
             Objects.requireNonNull(
                 getClass().getResource(
-                    "/fxmlGUIbuilder/weather_application_scene.fxml"
+                    "/builder/application_scene.fxml"
                 )
             )
         );
@@ -301,7 +301,7 @@ public class WeatherAppController implements Initializable {
         isSecondSceneButtonClicked = true;
         root = FXMLLoader.load(Objects.requireNonNull(
             getClass().getResource(
-                "/fxmlGUIbuilder/weather_week_forecast_Scene.fxml"
+                "/builder/forecast_scene.fxml"
                 )
             )
         );

@@ -25,19 +25,19 @@ public class AppMain extends Application {
 
             rootNode = FXMLLoader.load(
                 Objects.requireNonNull(getClass().getResource(
-                    "/fxmlGUIbuilder/weather_application_scene.fxml")
+                    "/builder/application_scene.fxml")
                 )
             ); // first scene
             String appIconPath = String.valueOf(Objects.requireNonNull(
                 getClass().getResource(
-                    "/Images/Icons/app_icon.png"
+                    "/static/icons/app_icon.png"
                 )
             ));
             Image weatherIcon = new Image(appIconPath);
             Scene scene = new Scene(rootNode);
             String css_path = Objects.requireNonNull(
                 this.getClass().getResource(
-                    "/fxmlGUIbuilder/application_styles.css"
+                    "/builder/application_styles.css"
                 )
             ).toExternalForm();
 
